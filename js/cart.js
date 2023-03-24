@@ -24,9 +24,12 @@ function clearCart() {}
 function showCart() {
 
   // TODO: Find the table body
-
+const tbody = document.querySelector('#cart tbody');
   // TODO: Iterate over the items in the cart
-  // TODO: Create a TR
+  for(let i = 0; i< state.cart.items.length; i++){
+    // TODO: Create a TR
+    let trElem = document.createElement('tr');
+  }
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 

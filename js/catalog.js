@@ -51,22 +51,28 @@ function addSelectedItemToCart() {
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
-function updateCartPreview(){
+function updateCartPreview() {
+  let cart = state.cart;
+  console.log(cart);
   // TODO: Get the item and quantity from the form
-  let item = state.cart.items.pop();
-  console.log(item.product);
-  let product = item.product;
-  let quantity = item.quantity;
+  for (let i = 0; i < state.cart.items.length; i++) {
+    let item = state.cart.items[i];
+    console.log(item);
+    let product = item.product;
+    let quantity = item.quantity;
 
 
-  // TODO: Add a new element to the cartContents div with that information
-  let cartContents = document.getElementById('cartContents');
-  let listElem = document.createElement('ul');
-  cartContents.appendChild(listElem);
-  let liElem = document.createElement('li');
-  liElem.textContent = `${quantity} ${product}`;
-  listElem.appendChild(liElem);
+
+    // TODO: Add a new element to the cartContents div with that information
+    let cartContents = document.getElementById('cartContents');
+    let listElem = document.createElement('ul');
+    cartContents.appendChild(listElem);
+    let liElem = document.createElement('li');
+    liElem.textContent = `${quantity} ${product}`;
+    listElem.appendChild(liElem);
+  }
 }
+
 
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
