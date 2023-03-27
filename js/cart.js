@@ -63,10 +63,11 @@ function removeItemFromCart(event) {
   if(event.target.innerHTML === 'Remove'){
     let itemName = event.target.parentNode.ClassName;
     state.cart.removeItem(productName);
-      
+    // TODO: Save the cart back to local storage
+    state.cart.saveToLocalStorage();
+    // TODO: Re-draw the cart table
+    renderCart();
   }
-  // TODO: Save the cart back to local storage
-  // TODO: Re-draw the cart table
 
 }
 
